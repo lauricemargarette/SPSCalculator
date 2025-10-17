@@ -47,4 +47,12 @@ public class SolarBattery extends Battery {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public double getPower() {
+        return (getVolt() * getCurrent()) * this.quantity;
+    }
 }
