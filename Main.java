@@ -32,7 +32,7 @@ public class Main {
                         break;
                     }
                     System.out.println("Selected Appliance: " + label + " (" + watts + " W/hr.)");
-                    int hours = parseIntSafe(input("Hours used: ", input), 0);
+                    int hours = parseIntSafe(input("Hours used: ", input), -1);
                     appliance.addApplianceUsage(choice, hours);
                     System.out.println("Added " + label + " usage for " + hours + " hours.");
                     break;
@@ -47,7 +47,7 @@ public class Main {
             }
         } while (choice >= 1 && choice <= 9);
 
-        System.out.printf("Battery Capacity: %.0f Wh. %n", solarBattery.getPower());
+        System.out.printf("Battery Capacity: %.0f Wh.", solarBattery.getPower());
         if (solarBattery.getPower() > appliance.calculateTotalWattHours()) {
             System.out.printf("The battery can support the appliance usage with extra %.0f watts.", 
                 solarBattery.getPower() - appliance.calculateTotalWattHours());
