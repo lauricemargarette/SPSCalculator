@@ -10,7 +10,7 @@ public class Main {
         int choice, hours;
 
         System.out.println("--- Solar Battery and Appliance Power Consumption Calculator ---");
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("\n---------------------------------------------------------------");
 
         System.out.println("\nEnter Biller's Information:");
         biller.setBillerName(input("Biller's Name: ", input));

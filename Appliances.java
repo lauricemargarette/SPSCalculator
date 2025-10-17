@@ -93,7 +93,6 @@ public class Appliances {
 
     public void printReceipt() {
         System.out.println("\n----- Receipt -----\n");
-        System.out.println("Biller's Information:");
         billerInformation.displayBillerInfo();
 
         System.out.println("\nAppliance Usage Details:");

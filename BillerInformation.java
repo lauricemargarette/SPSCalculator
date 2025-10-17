@@ -1,4 +1,4 @@
-public class BillerInformation{
+public class BillerInformation extends Main{
     private String billerName, billerAddress, billerContact;
 
     BillerInformation() {
