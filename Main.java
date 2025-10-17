@@ -52,7 +52,7 @@ public class Main {
             System.out.printf("The battery can support the appliance usage with extra %.0f watts.", 
                 solarBattery.getPower() - appliance.calculateTotalWattHours());
         } else {
-            System.out.printf("\nThe battery cannot support the appliance usage with deficit of %.0f watts.", 
+            System.out.printf("The battery can't support the appliance usage with deficit of %.0f watts.", 
                 appliance.calculateTotalWattHours() - solarBattery.getPower());
         }
     }

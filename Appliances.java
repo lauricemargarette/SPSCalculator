@@ -97,7 +97,7 @@ public class Appliances {
         }
         System.out.printf("Total Watt-Hours: %.2f Wh%n\n", calculateTotalWattHours());
         System.out.print("---------------");
-        System.out.printf("Total kWh: %.2f kWh%n", calculateTotalKWh());
+        System.out.printf("\nTotal kWh: %.2f kWh%n", calculateTotalKWh());
         System.out.printf("Rate per kWh: %.2f pesos.%n", calculateRatePerKWh());
         System.out.printf("Total Daily Bill: %.2f pesos.%n", calculateTotalCost());
         System.out.printf("Total Monthly Bill: %.2f pesos.%n", calculateTotalCost() * 30 );
