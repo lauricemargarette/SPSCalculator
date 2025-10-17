@@ -6,8 +6,18 @@ public class Main {
 
         Appliances appliance = new Appliances();
         SolarBattery solarBattery = new SolarBattery();
+        BillerInformation biller = new BillerInformation();
         int choice, hours;
 
+        System.out.println("--- Solar Battery and Appliance Power Consumption Calculator ---");
+        System.out.println("---------------------------------------------------------------");
+
+        System.out.println("\nEnter Biller's Information:");
+        biller.setBillerName(input("Biller's Name: ", input));
+        biller.setBillerAddress(input("Biller's Address: ", input));
+        biller.setBillerContact(input("Biller's Contact Number: ", input));
+
+        System.out.println("\nEnter Solar Battery Details:");
         solarBattery.setBrand(input("Solar Battery Brand: ", input));
         solarBattery.setType(input("Solar Battery Type: ", input));
         solarBattery.listVoltageOptions();
@@ -50,8 +60,8 @@ public class Main {
                     System.out.println("Invalid selection. Please select again.");
                     break;
             }
-        } while (choice >= 1 && choice <= 9);
-
+        }
+        while (choice >= 1 && choice <= 9);
         System.out.printf("Battery Capacity: %.0f Wh.", solarBattery.getPower());
         if (solarBattery.getPower() > appliance.calculateTotalWattHours()) {
             System.out.printf("The battery can support the appliance usage with extra %.0f watts.", 

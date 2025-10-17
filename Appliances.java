@@ -3,6 +3,7 @@ import java.util.List;
 
 //Computation for appliances
 public class Appliances {
+    BillerInformation billerInformation = new BillerInformation();
     private double totalWattHours = 0.0;
     private double ratePerKWh = 13.32; //Rate this month of October 2025
     private final ArrayList<String> receipt = new ArrayList<>();
@@ -92,10 +93,14 @@ public class Appliances {
 
     public void printReceipt() {
         System.out.println("\n----- Receipt -----\n");
+        System.out.println("Biller's Information:");
+        billerInformation.displayBillerInfo();
+
+        System.out.println("\nAppliance Usage Details:");
         for (String item : receipt) {
             System.out.println(item);
         }
-        System.out.printf("Total Watt-Hours: %.2f Wh%n\n", calculateTotalWattHours());
+        System.out.printf("\nTotal Watt-Hours: %.2f Wh%n", calculateTotalWattHours());
         System.out.print("---------------");
         System.out.printf("\nTotal kWh: %.2f kWh%n", calculateTotalKWh());
         System.out.printf("Rate per kWh: %.2f pesos.%n", calculateRatePerKWh());
