@@ -9,6 +9,7 @@ public class Appliances {
 
     //Appliances List
     public void listAppliances() {
+        System.out.println("\n----- Appliance List -----");
         System.out.println("\n(1) Light Bulb");
         System.out.println("(2) Television");
         System.out.println("(3) Refrigerator");
@@ -95,11 +96,11 @@ public class Appliances {
             System.out.println(item);
         }
         System.out.printf("Total Watt-Hours: %.2f Wh%n\n", calculateTotalWattHours());
-        System.out.println("---------------");
+        System.out.print("---------------");
         System.out.printf("Total kWh: %.2f kWh%n", calculateTotalKWh());
         System.out.printf("Rate per kWh: %.2f pesos.%n", calculateRatePerKWh());
         System.out.printf("Total Daily Bill: %.2f pesos.%n", calculateTotalCost());
         System.out.printf("Total Monthly Bill: %.2f pesos.%n", calculateTotalCost() * 30 );
-        System.out.println("\n---------------\n");
+        System.out.println("---------------");
     }
 }
