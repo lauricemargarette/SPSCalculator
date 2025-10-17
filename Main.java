@@ -6,8 +6,8 @@ public class Main {
 
         Appliances appliance = new Appliances();
         SolarBattery solarBattery = new SolarBattery();
-        int choice, hours, billerContact;
-        String billerName, billerAddress;
+        int choice, hours;
+        String billerName, billerAddress, billerContact;
 
         System.out.println("--- Solar Battery and Appliance Power Consumption Calculator ---");
         System.out.println("\n---------------------------------------------------------------");
@@ -15,7 +15,7 @@ public class Main {
         System.out.println("\nEnter Biller's Information:");
         System.out.print("Biller's Name: "); billerName = input.nextLine();
         System.out.print("Biller's Address: "); billerAddress = input.nextLine();
-        System.out.print("Biller's Contact: "); billerContact = input.nextInt();
+        System.out.print("Biller's Contact: "); billerContact = input.nextLine();
 
 
         System.out.println("\nEnter Solar Battery Details:");
