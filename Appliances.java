@@ -24,30 +24,30 @@ public class Appliances {
 
     public String getApplianceLabel(int choice) {
         switch (choice) {
-            case 1: return "Light Bulb";
-            case 2: return "Television";
-            case 3: return "Refrigerator";
-            case 4: return "Air Conditioner";
-            case 5: return "Washing Machine";
-            case 6: return "Computer";
-            case 7: return "Fan";
-            case 8: return "Modem/Router";
-            case 9: return "Rice Cooker";
+            case 1: return "LED Light";
+            case 2: return "40-inch LED Television";
+            case 3: return "Inverter Refrigerator";
+            case 4: return "Split-Type Air Conditioner";
+            case 5: return "Twin-Tub Washing Machine";
+            case 6: return "Desktop Computer";
+            case 7: return "Electric Stand Fan";
+            case 8: return "Fiber Optic Modem/Router";
+            case 9: return "Toshiba Rice Cooker";
             default: return "Unknown Appliance";
         }
     }
 
     public int getApplianceWattage(int choice) {
         switch (choice) {
-            case 1: return 60;    // Light Bulb
-            case 2: return 150;   // Television
-            case 3: return 200;   // Refrigerator
+            case 1: return 40;    // Light Bulb
+            case 2: return 50;    // Television
+            case 3: return 70;    // Refrigerator
             case 4: return 1000;  // Air Conditioner
             case 5: return 500;   // Washing Machine
-            case 6: return 300;   // Computer
-            case 7: return 75;    // Fan
-            case 8: return 20;    // Modem/Router
-            case 9: return 250;   // Rice Cooker
+            case 6: return 300;   // Desktop Computer
+            case 7: return 50;    // Electric Fan
+            case 8: return 15;    // Modem/Router
+            case 9: return 400;   // Rice Cooker
             default: return 0;
         }
     }
