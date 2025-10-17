@@ -11,14 +11,14 @@ public class SolarBattery extends Battery {
     }
 
     public void listVoltageOptions() {
-        System.out.println("Solar Battery Voltage Option:");
+        System.out.println("\nSolar Battery Voltage Option:");
         System.out.println("(1) 12V System");
         System.out.println("(2) 24V System");
         System.out.println("(3) 48V System");
     }
 
     public void listCurrentOptions() {
-        System.out.println("Solar Battery Current Option:");
+        System.out.println("\nSolar Battery Current Option:");
         System.out.println("(1) 50Ah");
         System.out.println("(2) 100Ah");
         System.out.println("(3) 150Ah");
@@ -53,6 +53,6 @@ public class SolarBattery extends Battery {
     }
 
     public double getPower() {
-        return (getVolt() * getCurrent()) * this.quantity;
+        return super.getPower() * this.quantity;
     }
 }

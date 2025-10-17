@@ -8,8 +8,8 @@ public class Main {
         SolarBattery solarBattery = new SolarBattery();
         int choice, hours;
 
-        solarBattery.setBrand(input("Battery Brand: ", input));
-        solarBattery.setType(input("Battery Type: ", input));
+        solarBattery.setBrand(input("Solar Battery Brand: ", input));
+        solarBattery.setType(input("Solar Battery Type: ", input));
         solarBattery.listVoltageOptions();
         solarBattery.setVolt(Integer.parseInt(input("Battery Volt: ", input)));
         solarBattery.listCurrentOptions();
