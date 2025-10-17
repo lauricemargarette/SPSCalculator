@@ -3,7 +3,6 @@ import java.util.List;
 
 //Computation for appliances
 public class Appliances {
-    BillerInformation billerInformation = new BillerInformation();
     private double totalWattHours = 0.0;
     private double ratePerKWh = 13.32; //Rate this month of October 2025
     private final ArrayList<String> receipt = new ArrayList<>();
@@ -92,9 +91,6 @@ public class Appliances {
     }
 
     public void printReceipt() {
-        System.out.println("\n----- Receipt -----\n");
-        billerInformation.displayBillerInfo();
-
         System.out.println("\nAppliance Usage Details:");
         for (String item : receipt) {
             System.out.println(item);
