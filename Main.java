@@ -6,10 +6,15 @@ public class Main {
 
         Appliances appliance = new Appliances();
         SolarBattery solarBattery = new SolarBattery();
-        int choice;
+        int choice, hours;
 
-        solarBattery.setVolt(Double.parseDouble(input("Battery Voltage: ", input)));
-        solarBattery.setCurrent(Double.parseDouble(input("Battery Current: ", input)));
+        solarBattery.setBrand(input("Battery Brand: ", input));
+        solarBattery.setType(input("Battery Type: ", input));
+        solarBattery.listVoltageOptions();
+        solarBattery.setVolt(Integer.parseInt(input("Battery Volt: ", input)));
+        solarBattery.listCurrentOptions();
+        solarBattery.setCurrent(Integer.parseInt(input("Battery Current: ", input)));
+        solarBattery.setQuantity(Integer.parseInt(input("Quantity of Batteries: ", input)));
 
         do {
             appliance.listAppliances();
@@ -32,7 +37,7 @@ public class Main {
                         break;
                     }
                     System.out.println("Selected Appliance: " + label + " (" + watts + " W/hr.)");
-                    int hours = parseIntSafe(input("Hours used: ", input), -1);
+                    hours = parseIntSafe(input("Hours used: ", input), -1);
                     appliance.addApplianceUsage(choice, hours);
                     System.out.println("Added " + label + " usage for " + hours + " hours.");
                     break;
