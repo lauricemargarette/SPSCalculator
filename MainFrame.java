@@ -72,6 +72,7 @@ public class MainFrame extends JFrame{
         mainPanel.setBackground(new Color(128, 128, 255));
         mainPanel.add(formPanel, BorderLayout.NORTH);
         mainPanel.add(welcomeText, BorderLayout.CENTER);
+        mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
 
