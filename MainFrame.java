@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class MainFrame extends JFrame{
-    final private Font mainFont = new Font("Poppins", Font.BOLD, 20);
+    final private Font mainFont = new Font("Poppins", Font.BOLD, 18);
     JTextField billerName, billerAddress, billerContact;
     JLabel welcomeText;
 
@@ -48,7 +48,7 @@ public class MainFrame extends JFrame{
         buttons.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String billerFullName = billerName.getText();
-                welcomeText.setText("Hello, " + billerFullName + "! You live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
+                welcomeText.setText("Hello, " + billerFullName + "! \nYou live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
             }
         });
 
