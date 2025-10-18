@@ -18,26 +18,10 @@ public class MainFrame extends JFrame{
         billerName = new JTextField();
         billerName.setFont(mainFont);
 
-        JLabel billerFullAddress = new JLabel("Biller's Address: ");
-        billerFullAddress.setFont(mainFont);
-
-        billerAddress = new JTextField();
-        billerAddress.setFont(mainFont);
-
-        JLabel billerFullContact = new JLabel("Biller's Contact: ");
-        billerFullContact.setFont(mainFont);
-
-        billerContact = new JTextField();
-        billerContact.setFont(mainFont);
-
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new GridLayout(4, 1, 5, 5));
         formPanel.add(billerFullName);
         formPanel.add(billerName);
-        formPanel.add(billerFullAddress);
-        formPanel.add(billerAddress);
-        formPanel.add(billerFullContact);
-        formPanel.add(billerContact);
 
         /*WELCOME TEXT*/
         welcomeText = new JLabel();
@@ -49,7 +33,7 @@ public class MainFrame extends JFrame{
         buttons.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String billerFullName = billerName.getText();
-                welcomeText.setText("Hello, " + billerFullName + "! You live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
+                welcomeText.setText("Hello, " + billerFullName + "!");
             }
         });
 
