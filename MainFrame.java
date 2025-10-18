@@ -1,13 +1,89 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class MainFrame extends JFrame{
     final private Font mainFont = new Font("Poppins", Font.BOLD, 20);
     JTextField billerName, billerAddress, billerContact;
+    JLabel welcomeText;
 
     public void initialize() {
-        /*FORMS PANEL */
+        /*FORMS PANEL*/
         JLabel billerFullName = new JLabel("Biller's Name: ");
         billerFullName.setFont(mainFont);
+
+        billerName = new JTextField();
+        billerName.setFont(mainFont);
+
+        JLabel billerFullAddress = new JLabel("Biller's Address: ");
+        billerFullAddress.setFont(mainFont);
+
+        billerAddress = new JTextField();
+        billerAddress.setFont(mainFont);
+
+        JLabel billerFullContact = new JLabel("Biller's Contact: ");
+        billerFullContact.setFont(mainFont);
+
+        billerContact = new JTextField();
+        billerContact.setFont(mainFont);
+
+        JPanel formPanel = new JPanel();
+        formPanel.setLayout(new GridLayout(4, 1, 5, 5));
+        formPanel.add(billerFullName);
+        formPanel.add(billerName);
+        formPanel.add(billerFullAddress);
+        formPanel.add(billerAddress);
+        formPanel.add(billerFullContact);
+        formPanel.add(billerContact);
+
+        /*WELCOME TEXT*/
+        welcomeText = new JLabel();
+        welcomeText.setFont(mainFont);
+
+        /*Buttons Panel*/
+        JButton buttons = new JButton("NEXT");
+        buttons.setFont(mainFont);
+        buttons.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+            }
+        });
+
+        JButton buttonsClr = new JButton("CLEAR");
+        buttonsClr.setFont(mainFont);
+        buttonsClr.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                billerName.setText("");
+                welcomeText.setText("");
+            }
+            
+        });
+
+        JPanel buttonsPanel = new JPanel();
+        buttonsPanel.setLayout(new GridLayout(1, 2, 5, 5));
+        buttonsPanel.add(buttons);
+        buttonsPanel.add(buttonsClr);
+
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+        mainPanel.setBackground(new Color(128, 128, 255));
+        mainPanel.add(formPanel, BorderLayout.NORTH);
+        mainPanel.add(welcomeText, BorderLayout.CENTER);
+
+        add(mainPanel);
+
+        setTitle("Welcome");
+        setSize(500, 600);
+        setMinimumSize(new Dimension(300, 400));
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
     }
+
+    public static void main(String[] args) {
+    MainFrame myFrame = new MainFrame();
+    myFrame.initialize();
+}
 }
