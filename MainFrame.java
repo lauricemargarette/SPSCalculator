@@ -46,9 +46,9 @@ public class MainFrame extends JFrame{
         JButton buttons = new JButton("NEXT");
         buttons.setFont(mainFont);
         buttons.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+                String billerFullName = billerName.getText();
+                welcomeText.setText("Hello, " + billerFullName + "!");
             }
         });
 
