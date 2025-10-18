@@ -6,17 +6,17 @@ This project aims to assist users, students, society, and developers in understa
 -----
 
 ## 📘 Table of Contents
-- [About](#about)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [About](#About)
+- [Features](#Features)
+- [Getting Started](#Getting-Started)
+  - [Prerequisites](#Prerequisites)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+- [Project Structure](#Project-Structure)
+- [How It Works](#How-It-Works)
+- [Contributing](#Contributing)
+- [License](#License)
+- [Contact](#Contact)
 
 -----
 
