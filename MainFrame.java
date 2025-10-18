@@ -49,6 +49,7 @@ public class MainFrame extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String billerFullName = billerName.getText();
                 welcomeText.setText("Hello, " + billerFullName + "!");
+                welcomeText.setText("You live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
             }
         });
 
@@ -59,7 +60,6 @@ public class MainFrame extends JFrame{
                 billerName.setText("");
                 welcomeText.setText("");
             }
-            
         });
 
         JPanel buttonsPanel = new JPanel();
@@ -69,7 +69,7 @@ public class MainFrame extends JFrame{
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBackground(new Color(128, 128, 255));
+        mainPanel.setBackground(new Color(0, 0, 0));
         mainPanel.add(formPanel, BorderLayout.NORTH);
         mainPanel.add(welcomeText, BorderLayout.CENTER);
         mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
