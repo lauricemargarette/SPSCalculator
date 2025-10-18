@@ -49,7 +49,7 @@ public class MainFrame extends JFrame{
         buttons.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String billerFullName = billerName.getText();
-                welcomeText.setText("Hello, " + billerFullName + "! \nYou live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
+                welcomeText.setText("Hello, " + billerFullName + "! You live at " + billerFullAddress + " and your contact number is " + billerFullContact + ".");
             }
         });
 
@@ -78,7 +78,7 @@ public class MainFrame extends JFrame{
 
         setTitle("Welcome");
         setSize(500, 600);
-        setMinimumSize(new Dimension(300, 400));
+        setMinimumSize(new Dimension(600, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
