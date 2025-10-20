@@ -8,7 +8,7 @@ public class Main {
 
         JFrame frame = new JFrame();
         frame.setTitle("Solar Power System Calculator");
-        frame.setSize(500, 600);
+        frame.setSize(750, 600);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
