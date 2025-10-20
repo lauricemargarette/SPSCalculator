@@ -63,7 +63,6 @@ public class MainFrame extends JFrame{
         setSize(500, 600);
         setMinimumSize(new Dimension(600, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
 
         JLabel label = new JLabel("Welcome to my app!");
         add(label);
