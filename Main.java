@@ -1,8 +1,19 @@
 import javax.swing.*;
+
+import java.awt.Color;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        JFrame frame = new JFrame();
+        frame.setTitle("Solar Power System Calculator");
+        frame.setSize(500, 600);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        frame.getContentPane().setBackground(new Color(128, 0, 0));
 
         Scanner input = new Scanner(System.in);
 
