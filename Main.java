@@ -3,8 +3,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         Scanner input = new Scanner(System.in);
+
+        System.out.println("==============================================");
+        System.out.println("  Solar Power System Calculator (SPS)");
+        System.out.println("==============================================");
+        System.out.println("Select Mode:");
+        System.out.println("[1] Console Mode");
+        System.out.println("[2] GUI Mode");
+        System.out.print("Enter your choice: ");
+        int mode = parseIntSafe(input.nextLine(), -1);
+
+        if (mode == 2) {
+            // 🪟 Run GUI Mode
+            System.out.println("Launching GUI...");
+            SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    new MainFrame(); // Opens your Swing GUI
+                }
+            });
+            return; // Exit after opening the GUI
+        }
+
+        // 🖥️ Run Console Mode
+        runConsoleMode(input);
+    }
+
+    public static void runConsoleMode(Scanner input) {
 
         Appliances appliance = new Appliances();
         SolarBattery solarBattery = new SolarBattery();
@@ -19,7 +45,6 @@ public class Main {
         System.out.print("Biller's Address: "); billerAddress = input.nextLine();
         System.out.print("Biller's Contact: "); billerContact = input.nextLine();
 
-
         System.out.println("\nEnter Solar Battery Details:");
         solarBattery.setBrand(input("Solar Battery Brand: ", input));
         solarBattery.setType(input("Solar Battery Type: ", input));
@@ -32,17 +57,10 @@ public class Main {
         do {
             appliance.listAppliances();
             choice = parseIntSafe(input("Select an appliance: ", input), -1);
-            
+
             switch (choice) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
+                case 1: case 2: case 3: case 4:
+                case 5: case 6: case 7: case 8: case 9:
                     int watts = appliance.getApplianceWattage(choice);
                     String label = appliance.getApplianceLabel(choice);
                     if (watts < 0) {
@@ -54,7 +72,7 @@ public class Main {
                     appliance.addApplianceUsage(choice, hours);
                     System.out.println("Added " + label + " usage for " + hours + " hours.");
                     break;
-                
+
                 case 0:
                     System.out.println("\n----- Receipt -----\n");
                     System.out.println("Biller's Name: " + billerName);
@@ -67,23 +85,16 @@ public class Main {
                     System.out.println("Invalid selection. Please select again.");
                     break;
             }
-        }
-        while (choice >= 1 && choice <= 9);
-        
-        System.out.printf("Battery Capacity: %.0f Wh.", solarBattery.getPower());
-        if (solarBattery.getPower() > appliance.calculateTotalWattHours()) {
-            System.out.printf("The battery can support the appliance usage with extra %.0f watts.", 
-                solarBattery.getPower() - appliance.calculateTotalWattHours());
-        } else {
-            System.out.printf("The battery can't support the appliance usage with deficit of %.0f watts.", 
-                appliance.calculateTotalWattHours() - solarBattery.getPower());
-        }
+        } while (choice >= 1 && choice <= 9);
 
-    SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame(); // Create and show your GUI
-                }
-        });
+        System.out.printf("Battery Capacity: %.0f Wh.\n", solarBattery.getPower());
+        if (solarBattery.getPower() > appliance.calculateTotalWattHours()) {
+            System.out.printf("The battery can support the appliance usage with extra %.0f watts.\n",
+                    solarBattery.getPower() - appliance.calculateTotalWattHours());
+        } else {
+            System.out.printf("The battery can't support the appliance usage with deficit of %.0f watts.\n",
+                    appliance.calculateTotalWattHours() - solarBattery.getPower());
+        }
     }
 
     public static String input(String message, Scanner input) {
