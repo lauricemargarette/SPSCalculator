@@ -1,47 +1,41 @@
 import javax.swing.*;
-
+import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.Font;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+        ImageIcon image = new ImageIcon("C:/Users\\Laurice Margarette\\OneDrive\\Desktop\\SPSCalculatorProject\\Coding.png");
+
+        JLabel label = new JLabel();
+        label.setText("Welcome to Solar Power System Calculator! Thank you for using this system and enjoy using it.");
+        label.setIcon(image);
+        label.setHorizontalTextPosition((int) JLabel.CENTER_ALIGNMENT);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.TOP);
+        label.setFont(new Font("Arial", Font.BOLD, 20));
+        label.setForeground(new Color(00000));
+        label.setIconTextGap(-20);
+        label.setVerticalAlignment(JLabel.CENTER);
+        label.setHorizontalAlignment(JLabel.CENTER);
+
         JFrame frame = new JFrame();
+        frame.add(label);
         frame.setTitle("Solar Power System Calculator");
-        frame.setSize(750, 600);
+        frame.setSize(1000, 700);
         frame.setResizable(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        frame.getContentPane().setBackground(new Color(117, 138, 147));
 
-        frame.getContentPane().setBackground(new Color(128, 0, 0));
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("==============================================");
-        System.out.println("  Solar Power System Calculator (SPS)");
-        System.out.println("==============================================");
-        System.out.println("Select Mode:");
-        System.out.println("[1] Console Mode");
-        System.out.println("[2] GUI Mode");
-        System.out.print("Enter your choice: ");
-        int mode = parseIntSafe(input.nextLine(), -1);
-
-        if (mode == 2) {
-            // 🪟 Run GUI Mode
-            System.out.println("Launching GUI...");
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    new MainFrame(); // Opens your Swing GUI
-                }
-            });
-            return; // Exit after opening the GUI
-        }
-
-        // 🖥️ Run Console Mode
-        runConsoleMode(input);
+        MainFrame myFrame = new MainFrame();
     }
-
-    public static void runConsoleMode(Scanner input) {
+    
+    Scanner input = new Scanner(System.in);
+    
+    public static void main(Scanner input) {
 
         Appliances appliance = new Appliances();
         SolarBattery solarBattery = new SolarBattery();
